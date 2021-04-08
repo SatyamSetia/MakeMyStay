@@ -1,0 +1,88 @@
+import React, { useState } from 'react';
+import { useHistory } from 'react-router';
+import { loginService } from '../../../services/auth';
+import Loader from '../../utilities/loader/loader';
+
+import './login-form.css';
+
+const LoginForm = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [isUserGuest, setIsUserGuest] = useState(true);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const history = useHistory();
+
+    const onLogin = () => {
+        setIsLoading(true);
+        if(username.length && password.length) {
+            loginService({
+                username,
+                password,
+                type: isUserGuest ? 'guest' : 'host'
+            }).then((data) => {
+                console.log(data);
+                if(!data) throw new Error("Invalid credentials!!");
+                history.push('/properties');
+            }).catch((err) => {
+                console.log(err);
+                setUsername("");
+                setPassword("");
+                setIsLoading(false);
+            });
+        }
+    }
+
+    return (
+        <div className="LoginForm">
+            <div className="LoginForm__userTypeToggle">
+                <div 
+                    className={isUserGuest ? "LoginForm__activeToggle" : "LoginForm__inActiveToggle"}
+                    onClick={() => setIsUserGuest(true)}
+                >
+                    Guest
+                </div>
+                <div 
+                    className={!isUserGuest ? "LoginForm__activeToggle" : "LoginForm__inActiveToggle"}
+                    onClick={() => setIsUserGuest(false)}
+                >
+                    Host
+                </div>
+            </div>
+            <div className="LoginForm__inputGroup">
+                {
+                    username.length > 0 ?
+                    <label className="LoginForm__inputLabel">Username</label> : null
+                }
+                <input 
+                    id="username" 
+                    placeholder="Username" 
+                    type="text" 
+                    className="LoginForm__inputControl" 
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                
+                {
+                    password.length > 0 ?
+                    <label className="LoginForm__inputLabel">Password</label> : null
+                }
+                <input 
+                    placeholder="Password" 
+                    type="password" 
+                    className="LoginForm__inputControl" 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+            </div>
+            {
+                isLoading ? 
+                <div className="LoginForm__loader">
+                    <Loader/>
+                </div> :
+                <button className="LoginForm__loginButton" onClick={onLogin}>Login as {isUserGuest? 'Guest' : 'Host'}</button>
+            }
+        </div>
+    );
+}
+
+export default LoginForm;

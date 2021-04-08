@@ -42,7 +42,7 @@ const securedRoute = (isAuthenticated, route) => {
 }
 
 const Routes = () => {
-    const isAuthenticated = false;
+    const isAuthenticated = true;
 
     return (
         <Router>

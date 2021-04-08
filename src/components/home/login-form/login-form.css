@@ -1,0 +1,72 @@
+.LoginForm {
+    max-width: 95%;
+    min-height: 350px;
+    width: 400px;
+    background-color: var(--basic-white);
+    box-shadow: 0 1px 7px 0 var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LoginForm__userTypeToggle {
+    width: 100%;
+    display: flex;
+}
+
+.LoginForm__activeToggle {
+    flex-grow: 1;
+}
+
+.LoginForm__inActiveToggle {
+    flex-grow: 1;
+    background-color: var(--basic-grey);
+}
+
+.LoginForm__activeToggle, .LoginForm__inActiveToggle {
+    padding: 12px;
+    cursor: pointer;
+}
+
+.LoginForm__loginButton {
+    width: 100%;
+    padding: 12px;
+    font-size: var(--large-font);
+    border: none;
+    outline: transparent;
+    background-color: var(--primary-blue);
+    color: var(--basic-white);
+    cursor: pointer;
+}
+
+.LoginForm__inputGroup {
+    margin: 20px 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.LoginForm__inputLabel {
+    align-self: flex-start;
+    font-size: var(--medium-font);
+    margin: 12px 0 0 0;
+}
+
+.LoginForm__inputControl {
+    border: none;
+    outline: none;
+    border-radius: 0px;
+    padding: 8px;
+    margin: 12px 0;
+    font-size: var(--large-font);
+    background-color: var(--basic-grey);
+}
+
+.LoginForm__loader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
