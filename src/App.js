@@ -5,16 +5,18 @@ import {
 } from "react-router-dom";
 
 import './App.css';
+import PropertyList from "./components/property-list/property-list";
+import Header from "./components/header/header";
 
 function App() {
   return (
     <div className="App">
-      make my stay
+      <Header/>
       <Router>
-        <div>
+        <div className="App_content">
           <Switch>
-            <Route path="/about">
-              <div>about</div>
+            <Route path="/properties">
+              <PropertyList/>
             </Route>
             <Route path="/users">
               <div>users</div>

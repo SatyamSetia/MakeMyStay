@@ -1,4 +1,10 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: inherit;
+  background-color: var(--basic-grey);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +16,23 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  height: inherit;
+}
+
+:root {
+  --smaller-font: 11px;
+  --small-font: 12px;
+  --medium-font: 14px;
+  --large-font: 18px;
+
+  --header-height: 44px;
+
+  --shadow: rgb(0 0 0 / 40%);
+  --basic-grey: #f2f2f2;
+  --dark-grey: #808080;
+  --basic-white: #ffffff;
+  --dull-white: #fdfdfd;
 }

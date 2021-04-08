@@ -1,3 +1,11 @@
 .App {
   text-align: center;
+  height: inherit;
+}
+
+.App_content {
+  height: calc(100% - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
