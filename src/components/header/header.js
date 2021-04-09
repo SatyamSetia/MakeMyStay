@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router';
+import { useHistory, withRouter } from 'react-router';
+
 import { USERTYPES } from '../../config';
+import { getViewTitle } from '../../routes/routes-config';
 import { logoutService } from '../../services/auth';
-
 import { logoutUser } from '../../store/actions/auth-actions';
-
 import './header.css';
 
-const Header = ({_logoutUser, user}) => {
+const Header = ({_logoutUser, user, location}) => {
     const history = useHistory();
+    const [title, setTitle] = useState('');
 
+    
+    useEffect(() => {
+        setTitle(getViewTitle(location.pathname));
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
+    
     if(!user) return null;
 
     const logout = () => {
@@ -26,7 +34,10 @@ const Header = ({_logoutUser, user}) => {
 
     return (
         <div className="Header">
-            <div></div>
+            <div>
+                <span className="Header__back" onClick={() => history.goBack()}>back</span>
+                <span className="Header__title">{title}</span>
+            </div>
             <div>
                 {
                     user.type === USERTYPES.HOST ? 
@@ -51,4 +62,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

@@ -11,6 +11,18 @@
     align-items: center;
 }
 
+.Header__title {
+    margin: 12px;
+    font-size: var(--large-font);
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.Header__back {
+    margin-left: 12px;
+    cursor: pointer;
+}
+
 .Header__actionButton {
     color: var(--primary-blue);
     margin: 0 18px;
