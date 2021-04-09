@@ -8,6 +8,6 @@ export const getProperty = (_propertyId) => {
 
     let property = properties.find(matchProperty);
 
-    if(property) return fakeApi(property) 
+    if(property) return fakeApi(property);
     else return fakeApi(null);
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
     BrowserRouter as Router,
     Switch,
@@ -6,6 +7,7 @@ import {
     Redirect
 } from "react-router-dom";
 import Header from '../components/header/header';
+import { getLoggedInUser } from '../services/auth';
 
 import { routes } from './routes-config';
 
@@ -41,8 +43,8 @@ const securedRoute = (isAuthenticated, route) => {
     );
 }
 
-const Routes = () => {
-    const isAuthenticated = true;
+const Routes = (_userId) => {
+    const isAuthenticated =  getLoggedInUser() !== null || _userId !== null;
 
     return (
         <Router>
@@ -63,4 +65,10 @@ const Routes = () => {
     );
 }
 
-export default Routes;
+const mapStateToProps = ({auth}) => {
+    return {
+        _userId: auth.user ? auth.user._userId : null 
+    }
+}
+
+export default connect(mapStateToProps)(Routes);

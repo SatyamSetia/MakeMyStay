@@ -9,7 +9,7 @@ const PropertyListItem = ({property, isUserGuest}) => {
 
     const bookNow = () => {
         history.push({
-            pathname: '/booking/new',
+            pathname: '/bookings/new',
             state: {
                 property
             }

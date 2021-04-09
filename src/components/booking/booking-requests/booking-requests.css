@@ -1,0 +1,22 @@
+.BookingRequestsList {
+    box-sizing: border-box;
+    flex-grow: 1;
+    max-width: 720px;
+    width: 100%;
+}
+
+.BookingRequestsList__loader {
+    margin: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BookingRequestItem {
+    margin: 18px;
+    background-color: var(--dull-white);
+    box-shadow: 0 1px 3px 0 var(--shadow);
+
+    display: flex;
+}

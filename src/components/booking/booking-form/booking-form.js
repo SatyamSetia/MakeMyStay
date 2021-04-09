@@ -6,7 +6,7 @@ import DateInput from '../../utilities/form-controls/date-input';
 import NumberInput from '../../utilities/form-controls/number-input';
 import TextInput from '../../utilities/form-controls/text-input';
 
-const BookingForm = () => {
+const BookingForm = ({createBookingRequest}) => {
     const todayDate = formatDate(new Date());
     const tomorrowDate = formatDate(new Date(), 1);
 
@@ -18,8 +18,10 @@ const BookingForm = () => {
     
     const [message, setMessage] = useState("");
 
-    const onBookNow = () => {
-
+    const onRequestBook = () => {
+        createBookingRequest({
+            checkIn, checkOut, guestCount, roomCount, message
+        });
     }
 
     return (
@@ -45,7 +47,7 @@ const BookingForm = () => {
                 <TextInput label="Message: " text={message} onTextChange={setMessage} name="message" rows={5}/>
             </div>
 
-            <button className="BookingForm__bookNowButton" onClick={onBookNow}>Request to book</button>
+            <button className="BookingForm__bookNowButton" onClick={onRequestBook}>Request to book</button>
         </div>
     );
 }

@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.Header__logoutButton {
+.Header__actionButton {
     color: var(--primary-blue);
     margin: 0 18px;
     cursor: pointer;

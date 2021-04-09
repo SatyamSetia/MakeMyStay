@@ -1,6 +1,7 @@
 export const properties = [
     {
         _propertyId: 'p1',
+        _hostId: 'u2',
         name: 'Nature Stay',
         category: {
             _categoryId: 't1',
@@ -68,6 +69,7 @@ export const properties = [
         ]
     }, {
         _propertyId: 'p2',
+        _hostId: 'u2',
         name: 'Pine Homes',
         category: {
             _categoryId: 't1',
@@ -135,6 +137,7 @@ export const properties = [
         ]
     }, {
         _propertyId: 'p3',
+        _hostId: 'u2',
         name: 'Olive Greens',
         category: {
             _categoryId: 't1',
@@ -202,6 +205,7 @@ export const properties = [
         ]
     }, {
         _propertyId: 'p4',
+        _hostId: 'u3',
         name: "Geranium Cottage",
         category: {
             _categoryId: 't1',
