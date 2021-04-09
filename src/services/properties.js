@@ -11,3 +11,12 @@ export const getProperty = (_propertyId) => {
     if(property) return fakeApi(property);
     else return fakeApi(null);
 }
+
+export const getPropertiesByHostId = (_hostId) => {
+    let propertiesByHostId = properties.filter(propertyData => propertyData._hostId === _hostId);
+    return fakeApi(propertiesByHostId);
+}
+
+export const getAllProperties = () => {
+    return fakeApi(properties);
+}

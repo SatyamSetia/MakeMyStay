@@ -7,7 +7,7 @@ import {
     Redirect
 } from "react-router-dom";
 import Header from '../components/header/header';
-import { getLoggedInUser } from '../services/auth';
+//import { getLoggedInUser } from '../services/auth';
 
 import { routes } from './routes-config';
 
@@ -22,14 +22,15 @@ const WithHeader = ({ component, ...props }) => {
     );
 }
 
-const securedRoute = (isAuthenticated, route) => {
+const securedRoute = (isAllowed, route) => {
+    console.log(isAllowed)
     return (
         <Route
             key={route.path}
             path={route.path}
             render={({ location }) =>
-                isAuthenticated ? (
-                    <WithHeader component={route.component}/>
+                isAllowed ? (
+                    <WithHeader component={route.component} />
                 ) : (
                     <Redirect
                         to={{
@@ -43,16 +44,19 @@ const securedRoute = (isAuthenticated, route) => {
     );
 }
 
-const Routes = (_userId) => {
-    const isAuthenticated =  getLoggedInUser() !== null || _userId !== null;
-
+const Routes = ({user}) => {
+    const isAuthenticated = user !== null;
+    console.log('is authenticated', isAuthenticated);
     return (
         <Router>
             <Switch>
                 {
                     routes.map(route => {
+                        console.log(user);
+                        const isAuthorized = user ? route.canAccess.includes(user.type) : false;
+                        console.log('is authrized', isAuthorized);
                         return route.authGuard ?
-                            securedRoute(isAuthenticated, route) :
+                            securedRoute(isAuthenticated && isAuthorized, route) :
                             <Route
                                 key={route.path}
                                 path={route.path}
@@ -65,9 +69,9 @@ const Routes = (_userId) => {
     );
 }
 
-const mapStateToProps = ({auth}) => {
+const mapStateToProps = ({ auth }) => {
     return {
-        _userId: auth.user ? auth.user._userId : null 
+        user: auth.user
     }
 }
 

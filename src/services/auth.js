@@ -22,7 +22,11 @@ export const logoutService = () => {
 }
 
 export const getLoggedInUser = () => {
-    return window.localStorage.getItem(LOGGED_IN_USER_KEY);
+    let loggedInUserId = window.localStorage.getItem(LOGGED_IN_USER_KEY);
+    if(loggedInUserId) {
+        let user = users.find(userData => userData._userId === loggedInUserId);
+        return user;
+    } else return null;
 }
 
 export const setLoggedInUser = (_userId) => {

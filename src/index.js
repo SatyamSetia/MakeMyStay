@@ -6,8 +6,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './store';
+import { initialState } from './store/reducers/auth-reducer';
 
-const store = configureStore();
+const store = configureStore({
+  auth: initialState
+});
 
 ReactDOM.render(
   <Provider store={store}>

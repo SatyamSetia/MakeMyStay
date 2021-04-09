@@ -1,7 +1,8 @@
+import { getLoggedInUser } from "../../services/auth";
 import * as actionTypes from "../actions/action-types";
 
-const initialState = {
-    user: null
+export const initialState = {
+    user: getLoggedInUser()
 }
 
 const authReducer = (state = initialState, action) => {
