@@ -5,4 +5,14 @@
     width: 100%;
     background-color: var(--basic-white);
     box-shadow: 0 1px 7px 0 var(--shadow);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header__logoutButton {
+    color: var(--primary-blue);
+    margin: 0 18px;
+    cursor: pointer;
 }

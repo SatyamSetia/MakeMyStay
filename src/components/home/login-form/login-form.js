@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
+
 import { loginService } from '../../../services/auth';
+import { loginUser } from '../../../store/actions/auth-actions';
 import Loader from '../../utilities/loader/loader';
 
 import './login-form.css';
 
-const LoginForm = () => {
+const LoginForm = ({_loginUser}) => {
     const [isLoading, setIsLoading] = useState(false);
     const [isUserGuest, setIsUserGuest] = useState(true);
     const [username, setUsername] = useState("");
@@ -22,6 +25,8 @@ const LoginForm = () => {
             }).then((data) => {
                 console.log(data);
                 if(!data) throw new Error("Invalid credentials!!");
+
+                _loginUser(data);
                 history.push('/properties');
             }).catch((err) => {
                 console.log(err);
@@ -85,4 +90,10 @@ const LoginForm = () => {
     );
 }
 
-export default LoginForm;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        _loginUser: (user) => dispatch(loginUser(user))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(LoginForm);
