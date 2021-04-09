@@ -17,6 +17,62 @@
     margin: 18px;
     background-color: var(--dull-white);
     box-shadow: 0 1px 3px 0 var(--shadow);
+    padding: 12px;
 
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.BookingRequestItem__details {
+    width: 75%;
+    margin-right: 10px;
+}
+
+.BookingRequestItem__property {
+    width: 23%;
+    text-align: center;
+}
+
+.BookingRequestItem__container {
+    width: 100%;
+    display: flex;
+}
+
+.BookingRequestItem__detailsData {
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+
+.BookingRequestItem__detailsItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.BookingRequestItem__state {
+    margin-top: 12px;
+}
+
+.BookingRequestItem__stateAccept {
+    color: #0f0;
+}
+
+.BookingRequestItem__stateReject {
+    color: #f00;
+}
+
+.BookingRequestItem__actions {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.BookingRequestItem__messageText {
+    margin: 10px 0 18px 0;
+    border-radius: 5px;
+    background-color: #efffc3;
+    padding: 10px;
 }

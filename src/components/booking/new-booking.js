@@ -20,7 +20,9 @@ const NewBooking = ({location, history, user}) => {
         const bookingRequest = {
             ...details,
             _propertyId: property._propertyId,
-            _guestId: user._userId
+            _guestId: user._userId,
+            guestName: user.name,
+            propertyName: property.name
         }
 
         createBookingRequestService(bookingRequest).then(data => {

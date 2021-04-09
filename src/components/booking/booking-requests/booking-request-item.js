@@ -22,24 +22,66 @@ const BookingRequestItem = ({ request, refreshList }) => {
     }
 
     const renderActions = () => {
-        if(isLoading) return <Loader/>
-        
+        if (isLoading) return <Loader />
+
         return (
-            <div>
+            <div className="BookingRequestItem__actions">
                 <LinkButton label="Approve" action={() => updateRequest(BOOKING_REQUEST_STATE.APPROVED)} />
                 <LinkButton label="Reject" action={() => updateRequest(BOOKING_REQUEST_STATE.REJECTED)} />
             </div>
         );
     }
 
+    const renderMessage = () => {
+        return (
+            <div>
+                <div>{request.guestName} has a message for you -</div>
+                <div className="BookingRequestItem__messageText">
+                    {request.message}
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="BookingRequestItem">
-            {request._requestId}
-            {
-                request.state === BOOKING_REQUEST_STATE.PENDING ? 
-                renderActions() :
-                    <div>{request.state}</div>
-            }
+            <div className="BookingRequestItem__container">
+                <div className="BookingRequestItem__details">
+                    <div>You have received a request from {request.guestName}</div>
+                    <div className="BookingRequestItem__detailsData">
+                        <div className="BookingRequestItem__deatilsItem">
+                            <div>Dates</div>
+                            <div>{request.checkIn}-{request.checkOut}</div>
+                        </div>
+                        <div className="BookingRequestItem__deatilsItem">
+                            <div>Guests</div>
+                            <div>{request.guestCount}</div>
+                        </div>
+                        <div className="BookingRequestItem__deatilsItem">
+                            <div>Rooms</div>
+                            <div>{request.roomCount}</div>
+                        </div>
+                    </div>
+                    {
+                        request.message.length ?
+                            renderMessage() :
+                            null
+                    }
+                </div>
+                <div className="BookingRequestItem__property">
+                    <img src={`https://via.placeholder.com/140?text=${request.propertyName}`} alt="property_image"/>
+                    {request.propertyName}
+                </div>
+            </div>
+
+            <div className="BookingRequestItem__state">
+                {
+                    request.state === BOOKING_REQUEST_STATE.PENDING ?
+                        renderActions() :
+                        <div className={request.state === BOOKING_REQUEST_STATE.APPROVED ? "BookingRequestItem__stateAccept" : "BookingRequestItem__stateReject"}>{request.state}</div>
+                }
+            </div>
+
         </div>
     );
 }
