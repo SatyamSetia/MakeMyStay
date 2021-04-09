@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# MakeMyStay
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MakeMyStay is an online portal where host can list their properties and guests can browse them.
 
-## Available Scripts
+## Steps to install
+```
+clone this repo
+npm install
+npm start
+```
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
+Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Project structure (src folder)
+```
+src
+|
+|- components (UI components)
+|- config
+|- data (mock data used only via dummy API. No UI component is directly reading data from here)
+|- routes (UI routes and configuration lies here)
+|-service (business logic along with dummy API call lies here)
+|- store (redux related state management logic lies here)
+|- utils (utilities)
+```
 
-### `npm test`
+### Features
+[x] Login/Logout feature for Guest and Host
+[x] Authenticated Routes
+[x] Property List View where Guest can see all listed properties while Host can see properties list by him/her.
+[x] Property View with static details of any property
+[x] Option to book a property (only Guest can book a property)
+[x] Booking form for requesting new booking (Managed through localstorage)
+[x] Manage Booking Requests feature for Host (Bell Icon on top left in Host login view)
+[x] Host can Approve/Reject Booking Request
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Pending items due to limited time
+[ ] Payment and Refund feautre on rejection of booking
+[ ] Complete code coverage (unit testing)
+[ ] Response designs
+[ ] Form validations
 
-### `npm run build`
+## Asssumptions -
+* All mock data (inside src >> data) is based on asssumptions
+* Since, signup feature is not ready, two pre-registered (assumed) users that can be used are as follows
+    * ```
+        GUEST ->
+        Username - John 
+        Password - _Any string_ (no password validations are done yet)
+    
+        HOST ->
+        Username - David
+        Password - _Any string_ (no password validations are done yet)
+    ```
+* Guest can see all properties listed in DB while Host can see only properties listed by him/her.
+* Host can not book any property. (He/She needs a guest account to book any property)
+* No Restrictions applied on Check In and Check Out Dates
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
