@@ -7,7 +7,6 @@ import {
     Redirect
 } from "react-router-dom";
 import Header from '../components/header/header';
-//import { getLoggedInUser } from '../services/auth';
 
 import { routes } from './routes-config';
 
@@ -23,7 +22,6 @@ const WithHeader = ({ component, ...props }) => {
 }
 
 const securedRoute = (isAllowed, route) => {
-    console.log(isAllowed)
     return (
         <Route
             key={route.path}
@@ -46,15 +44,13 @@ const securedRoute = (isAllowed, route) => {
 
 const Routes = ({user}) => {
     const isAuthenticated = user !== null;
-    console.log('is authenticated', isAuthenticated);
+
     return (
         <Router>
             <Switch>
                 {
                     routes.map(route => {
-                        console.log(user);
                         const isAuthorized = user ? route.canAccess.includes(user.type) : false;
-                        console.log('is authrized', isAuthorized);
                         return route.authGuard ?
                             securedRoute(isAuthenticated && isAuthorized, route) :
                             <Route
