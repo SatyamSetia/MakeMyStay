@@ -27,20 +27,30 @@ src
 ```
 
 ### Features
-[x] Login/Logout feature for Guest and Host
-[x] Authenticated Routes
-[x] Property List View where Guest can see all listed properties while Host can see properties list by him/her.
-[x] Property View with static details of any property
-[x] Option to book a property (only Guest can book a property)
-[x] Booking form for requesting new booking (Managed through localstorage)
-[x] Manage Booking Requests feature for Host (Bell Icon on top left in Host login view)
-[x] Host can Approve/Reject Booking Request
+:heavy_check_mark: Login/Logout feature for Guest and Host
+
+:heavy_check_mark: Authenticated Routes
+
+:heavy_check_mark: Property List View where Guest can see all listed properties while Host can see properties list by him/her.
+
+:heavy_check_mark: Property View with static details of any property
+
+:heavy_check_mark: Option to book a property (only Guest can book a property)
+
+:heavy_check_mark: Booking form for requesting new booking (Managed through localstorage)
+
+:heavy_check_mark: Manage Booking Requests feature for Host (Bell Icon on top left in Host login view)
+
+:heavy_check_mark: Host can Approve/Reject Booking Request
 
 ### Pending items due to limited time
-[ ] Payment and Refund feautre on rejection of booking
-[ ] Complete code coverage (unit testing)
-[ ] Response designs
-[ ] Form validations
+:x: Payment and Refund feautre on rejection of booking
+
+:x: Complete code coverage (unit testing)
+
+:x: Response designs
+
+:x: Form validations
 
 ## Asssumptions -
 * All mock data (inside src >> data) is based on asssumptions
