@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/MakeMyStay/static/css/main.c749a596.chunk.css",
+    "main.js": "/MakeMyStay/static/js/main.befeb1df.chunk.js",
+    "main.js.map": "/MakeMyStay/static/js/main.befeb1df.chunk.js.map",
+    "runtime-main.js": "/MakeMyStay/static/js/runtime-main.81b650a3.js",
+    "runtime-main.js.map": "/MakeMyStay/static/js/runtime-main.81b650a3.js.map",
+    "static/js/2.2a8e63e4.chunk.js": "/MakeMyStay/static/js/2.2a8e63e4.chunk.js",
+    "static/js/2.2a8e63e4.chunk.js.map": "/MakeMyStay/static/js/2.2a8e63e4.chunk.js.map",
+    "static/js/3.ebe5a723.chunk.js": "/MakeMyStay/static/js/3.ebe5a723.chunk.js",
+    "static/js/3.ebe5a723.chunk.js.map": "/MakeMyStay/static/js/3.ebe5a723.chunk.js.map",
+    "index.html": "/MakeMyStay/index.html",
+    "static/css/main.c749a596.chunk.css.map": "/MakeMyStay/static/css/main.c749a596.chunk.css.map",
+    "static/js/2.2a8e63e4.chunk.js.LICENSE.txt": "/MakeMyStay/static/js/2.2a8e63e4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.81b650a3.js",
+    "static/js/2.2a8e63e4.chunk.js",
+    "static/css/main.c749a596.chunk.css",
+    "static/js/main.befeb1df.chunk.js"
+  ]
+}
