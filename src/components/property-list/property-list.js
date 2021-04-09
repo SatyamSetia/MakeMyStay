@@ -34,10 +34,20 @@ const PropertyList = ({user}) => {
         setIsLoading(false);
     }
 
+    const listHeader = user.type === USERTYPES.GUEST ? `${properties.length} properties listed near you -` : 
+    `You have ${properties.length} properties listed -`;
+
     const renderPropertyList = () => {
-        return properties.map((property, index) => {
-            return <PropertyListItem key={property._propertyId} property={property}/>
-        });
+        return (
+            <div className="PropertyList">
+                <div className="PropertyList__header">{listHeader}</div>
+                {
+                    properties.map((property, index) => {
+                        return <PropertyListItem key={property._propertyId} property={property}/>
+                    })
+                }
+            </div>
+        );
     }
 
     return (

@@ -3,6 +3,7 @@ export const properties = [
         _propertyId: 'p1',
         _hostId: 'u2',
         name: 'Nature Stay',
+        price: 4500,
         category: {
             _categoryId: 't1',
             name: 'Cottage'
@@ -71,6 +72,7 @@ export const properties = [
         _propertyId: 'p2',
         _hostId: 'u2',
         name: 'Pine Homes',
+        price: 3500,
         category: {
             _categoryId: 't1',
             name: 'Cottage'
@@ -139,6 +141,7 @@ export const properties = [
         _propertyId: 'p3',
         _hostId: 'u2',
         name: 'Olive Greens',
+        price: 5500,
         category: {
             _categoryId: 't1',
             name: 'Cottage'
@@ -207,6 +210,7 @@ export const properties = [
         _propertyId: 'p4',
         _hostId: 'u3',
         name: "Geranium Cottage",
+        price: 5000,
         category: {
             _categoryId: 't1',
             name: 'Cottage'

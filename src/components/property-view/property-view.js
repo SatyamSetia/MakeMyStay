@@ -55,7 +55,7 @@ const PropertyView = ({ property }) => {
                             <div>Ratings: {_property.reviews.overall}</div>
                         </div>
                         <div className="PropertyView__price">
-                            Price
+                            Price - ₹ {_property.price}/night
                         </div>
                     </div>
                     <div className="PropertyView__description">

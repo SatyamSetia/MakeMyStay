@@ -53,6 +53,10 @@
     margin: 12px 0 0 0;
 }
 
+.LoginForm__error {
+    color: #f00;;
+}
+
 .LoginForm__inputControl {
     border: none;
     outline: none;

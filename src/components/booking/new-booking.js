@@ -21,7 +21,7 @@ const NewBooking = ({location, history, user}) => {
             ...details,
             _propertyId: property._propertyId,
             _guestId: user._userId,
-            guestName: user.name,
+            guestName: user.username,
             propertyName: property.name
         }
 

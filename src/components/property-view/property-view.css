@@ -29,6 +29,7 @@
 }
 
 .PropertyView__price {
+    font-size: var(--medium-font);
 }
 
 .PropertyView__description, .PropertyView__howToReach, .PropertyView__facilities, .PropertyView__reviews {
@@ -36,7 +37,7 @@
     text-align: justify;
 }
 
-.PropertyView__facilities {
+.PropertyView__facilities, .PropertyView__reviews {
     text-transform: capitalize;
 }
 

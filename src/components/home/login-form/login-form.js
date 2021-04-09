@@ -11,6 +11,7 @@ import './login-form.css';
 
 const LoginForm = ({_loginUser}) => {
     const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
     const [isUserGuest, setIsUserGuest] = useState(true);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -25,7 +26,10 @@ const LoginForm = ({_loginUser}) => {
                 type: isUserGuest ? 'guest' : 'host'
             }).then((data) => {
                 console.log(data);
-                if(!data) throw new Error("Invalid credentials!!");
+                if(!data) {
+                    setIsError(true);
+                    throw new Error("Invalid credentials!!");
+                }
 
                 _loginUser({
                     ...data,
@@ -56,6 +60,13 @@ const LoginForm = ({_loginUser}) => {
                 >
                     Host
                 </div>
+            </div>
+            <div className="LoginForm__error">
+                {
+                    isError ? 
+                    <span>Invalid Credentials. Try Again.</span> :
+                    null
+                }
             </div>
             <div className="LoginForm__inputGroup">
                 {
