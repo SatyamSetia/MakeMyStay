@@ -1,0 +1,6 @@
+.LinkButton {
+    font-weight: 700;
+    color: var(--primary-blue);
+    cursor: pointer;
+    text-transform: uppercase;
+}

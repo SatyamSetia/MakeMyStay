@@ -9,12 +9,12 @@ import Header from '../components/header/header';
 
 import { routes } from './routes-config';
 
-const WithHeader = ({ component }) => {
+const WithHeader = ({ component, ...props }) => {
     return (
         <React.Fragment>
             <Header />
             <div className="App_content">
-                {component()}
+                {component(props)}
             </div>
         </React.Fragment>
     );

@@ -1,0 +1,4 @@
+.PropertyView {
+    display: flex;
+    flex-direction: column;
+}

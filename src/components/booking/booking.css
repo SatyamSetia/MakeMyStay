@@ -1,0 +1,15 @@
+.Booking {
+    width: 100%;
+    display: flex;
+    height: inherit;
+}
+
+.Booking__form, .Booking__propertyDetails {
+    flex-grow: 1;
+    padding: 18px;
+    height: inherit;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
