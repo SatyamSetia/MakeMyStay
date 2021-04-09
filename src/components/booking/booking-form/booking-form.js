@@ -19,7 +19,7 @@ const BookingForm = () => {
     const [message, setMessage] = useState("");
 
     const onBookNow = () => {
-        
+
     }
 
     return (
@@ -45,7 +45,7 @@ const BookingForm = () => {
                 <TextInput label="Message: " text={message} onTextChange={setMessage} name="message" rows={5}/>
             </div>
 
-            <button className="BookingForm__bookNowButton" onClick={onBookNow}>Book</button>
+            <button className="BookingForm__bookNowButton" onClick={onBookNow}>Request to book</button>
         </div>
     );
 }

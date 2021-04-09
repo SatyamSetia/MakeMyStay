@@ -13,7 +13,7 @@ export const routes = [
         component: PropertyList,
         authGuard: true
     }, {
-        path: '/booking',
+        path: '/booking/new',
         component: Booking,
         authGuard: true
     }, {
