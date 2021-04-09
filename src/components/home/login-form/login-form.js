@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
+import { USERTYPES } from '../../../config';
 
 import { loginService } from '../../../services/auth';
 import { loginUser } from '../../../store/actions/auth-actions';
@@ -26,7 +27,10 @@ const LoginForm = ({_loginUser}) => {
                 console.log(data);
                 if(!data) throw new Error("Invalid credentials!!");
 
-                _loginUser(data);
+                _loginUser({
+                    ...data,
+                    type: USERTYPES.GUEST === data.type ? USERTYPES.GUEST : USERTYPES.HOST
+                });
                 history.push('/properties');
             }).catch((err) => {
                 console.log(err);

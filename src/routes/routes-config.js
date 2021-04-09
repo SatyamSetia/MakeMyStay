@@ -1,4 +1,4 @@
-import Booking from "../components/booking/booking";
+import NewBooking from "../components/booking/new-booking";
 import Home from "../components/home/home";
 import PropertyList from "../components/property-list/property-list";
 import PropertyView from "../components/property-view/property-view";
@@ -14,7 +14,7 @@ export const routes = [
         authGuard: true
     }, {
         path: '/booking/new',
-        component: Booking,
+        component: NewBooking,
         authGuard: true
     }, {
         path: '/',

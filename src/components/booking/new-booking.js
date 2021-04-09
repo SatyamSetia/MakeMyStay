@@ -5,7 +5,7 @@ import './booking.css'
 import PropertyView from '../property-view/property-view';
 import BookingForm from './booking-form/booking-form';
 
-const Booking = ({location, history}) => {
+const NewBooking = ({location, history}) => {
     
     const property = location.state ? location.state.property : null;
     if(!property) history.push('/properties');
@@ -22,4 +22,4 @@ const Booking = ({location, history}) => {
     );
 }
 
-export default withRouter(Booking);
+export default withRouter(NewBooking);

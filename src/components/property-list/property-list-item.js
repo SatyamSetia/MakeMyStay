@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
+import { USERTYPES } from '../../config';
 import LinkButton from '../utilities/link-button/link-button';
 
-const PropertyListItem = ({property}) => {
+const PropertyListItem = ({property, isUserGuest}) => {
     const history = useHistory();
 
     const bookNow = () => {
@@ -24,11 +26,19 @@ const PropertyListItem = ({property}) => {
             <div className="PropertyListItem__details">
                 <span className="PropertyListItem__detailSubHeader">{property.category.name} in {property.location.city.name}</span>
                 <span className="PropertyListItem__detailHeader">{property.name}</span>
-                <LinkButton label="Book Now" action={bookNow}/>
+                {
+                    isUserGuest ? <LinkButton label="Book Now" action={bookNow}/> : null
+                }
                 <LinkButton label="View" action={viewProperty}/>
             </div>
         </div>
     );
 }
 
-export default PropertyListItem;
+const mapStateToProps = ({auth}) => {
+    return {
+        isUserGuest: auth.user ? (auth.user.type === USERTYPES.GUEST ? true : false) : false
+    }
+}
+
+export default connect(mapStateToProps, null)(PropertyListItem);
