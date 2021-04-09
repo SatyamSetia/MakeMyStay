@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory, withRouter } from 'react-router';
+import { MdArrowBack } from "react-icons/md";
+import { FiLogOut } from "react-icons/fi";
+import { GrNotification } from "react-icons/gr";
 
 import { USERTYPES } from '../../config';
 import { getViewTitle } from '../../routes/routes-config';
@@ -35,16 +38,22 @@ const Header = ({_logoutUser, user, location}) => {
     return (
         <div className="Header">
             <div>
-                <span className="Header__back" onClick={() => history.goBack()}>back</span>
+                <span className="Header__back" onClick={() => history.goBack()}>
+                    <MdArrowBack size={24}/>
+                </span>
                 <span className="Header__title">{title}</span>
             </div>
             <div>
                 {
                     user.type === USERTYPES.HOST ? 
-                    <span className="Header__actionButton" onClick={viewBookingRequests}>Requests</span> : 
+                    <span className="Header__actionButton" onClick={viewBookingRequests}>
+                        <GrNotification size={22}/>
+                    </span> : 
                     null
                 }
-                <span className="Header__actionButton" onClick={logout}>Logout</span>
+                <span className="Header__actionButton" onClick={logout}>
+                    <FiLogOut size={24}/>
+                </span>
             </div>
         </div>
     );

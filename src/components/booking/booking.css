@@ -1,13 +1,16 @@
 .Booking {
     width: 100%;
+    height: 98%;
+    box-sizing: border-box;
+
     display: flex;
-    height: inherit;
+    align-items: center;
+    margin-top: 100px;
 }
 
 .Booking__form, .Booking__propertyDetails {
     flex-grow: 1;
     padding: 18px;
-    height: inherit;
 
     display: flex;
     justify-content: center;

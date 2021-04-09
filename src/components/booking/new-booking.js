@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 
@@ -8,11 +8,15 @@ import BookingForm from './booking-form/booking-form';
 import { createBookingRequestService } from '../../services/booking-requests';
 
 const NewBooking = ({location, history, user}) => {
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [isBooked, setIsBooked] = useState(false);
     
     const property = location.state ? location.state.property : null;
     if(!property || !user) history.push('/properties');
 
     const createBookingRequest = (details) => {
+        setIsLoading(true);
         const bookingRequest = {
             ...details,
             _propertyId: property._propertyId,
@@ -21,15 +25,18 @@ const NewBooking = ({location, history, user}) => {
 
         createBookingRequestService(bookingRequest).then(data => {
             console.log(data);
+            setIsLoading(false);
+            setIsBooked(true);
         }).catch(err => {
             console.log(err);
+            setIsLoading(false);
         });
     }
 
     return (
         <div className="Booking">
             <div className="Booking__form">
-                <BookingForm createBookingRequest={createBookingRequest}/>
+                <BookingForm createBookingRequest={createBookingRequest} isLoading={isLoading} isBooked={isBooked}/>
             </div>
             <div className="Booking__propertyDetails">
                 <PropertyView property={property}/>

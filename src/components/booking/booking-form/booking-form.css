@@ -32,3 +32,16 @@
     color: var(--basic-white);
     cursor: pointer;
 }
+
+.BookingForm__loader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 12px;
+}
+
+.BookingForm__status {
+    font-size: var(--large-font);
+    margin: 12px;
+    color: var(--primary-blue);
+}

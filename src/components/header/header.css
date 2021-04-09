@@ -21,6 +21,7 @@
 .Header__back {
     margin-left: 12px;
     cursor: pointer;
+    vertical-align: middle;
 }
 
 .Header__actionButton {

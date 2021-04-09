@@ -1,4 +1,45 @@
 .PropertyView {
     display: flex;
     flex-direction: column;
+    max-width: 540px;
+}
+
+.PropertyView__loader {
+    margin: 40px;
+}
+
+.PropertyView__content {
+    margin: 40px;
+}
+
+.PropertyView__details {
+    display: flex;
+    justify-content: space-between;
+    text-align: start;
+    margin: 12px 0;
+}
+
+.PropertyView__highlight {
+    display: flex;
+    flex-direction: column;
+}
+
+.PropertyView__title {
+    display: flex;
+}
+
+.PropertyView__price {
+}
+
+.PropertyView__description, .PropertyView__howToReach, .PropertyView__facilities, .PropertyView__reviews {
+    margin: 12px 0;
+    text-align: justify;
+}
+
+.PropertyView__facilities {
+    text-transform: capitalize;
+}
+
+.PropertyView__label {
+    font-weight: 700;
 }
