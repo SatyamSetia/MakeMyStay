@@ -24,12 +24,31 @@ const PropertyListItem = ({property, isUserGuest}) => {
         <div className="PropertyListItem">
             <img src={`https://via.placeholder.com/150?text=${property.name}`} alt="property_image"/>
             <div className="PropertyListItem__details">
-                <span className="PropertyListItem__detailSubHeader">{property.category.name} in {property.location.city.name}</span>
-                <span className="PropertyListItem__detailHeader">{property.name}</span>
-                {
-                    isUserGuest ? <LinkButton label="Book Now" action={bookNow}/> : null
-                }
-                <LinkButton label="View" action={viewProperty}/>
+                <div className="PropertyListItem__detailsData">
+                    <span className="PropertyListItem__detailSubHeader">{property.category.name} in {property.location.city.name}</span>
+                    <span className="PropertyListItem__detailHeader">{property.name}</span>
+
+                </div>
+                <div className="PropertyListItem__actions">
+                    {
+                        isUserGuest ? <LinkButton label="Book Now" action={bookNow}/> : null
+                    }
+                    <div style={{width: "40px"}}></div>
+                    <LinkButton label="View" action={viewProperty}/>
+                </div>
+            </div>
+            <div className="PropertyListItem__ratings">
+                <div>
+                    <div>
+                        Ratings: {property.reviews.overall}
+                    </div>
+                    <div>
+                        {property.comments.length} comments
+                    </div>
+                </div>
+                <div>
+                    Price - ₹ {property.price}/night
+                </div>
             </div>
         </div>
     );

@@ -34,6 +34,13 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.PropertyListItem__detailsData {
+    display: flex;
+    flex-direction: column;
 }
 
 .PropertyListItem__detailSubHeader {
@@ -44,4 +51,23 @@
 .PropertyListItem__detailHeader {
     font-size: var(--large-font);
     font-weight: bold;
+}
+
+.PropertyListItem__ratings {
+    width: 140px;
+    font-size: var(--medium-font);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    text-align: right;
+}
+
+.PropertyListItem__actions {
+    justify-self: flex-end;
+    display: flex;
+    justify-content: left;
 }

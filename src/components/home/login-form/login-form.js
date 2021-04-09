@@ -18,8 +18,8 @@ const LoginForm = ({_loginUser}) => {
     const history = useHistory();
 
     const onLogin = () => {
-        setIsLoading(true);
         if(username.length && password.length) {
+            setIsLoading(true);
             loginService({
                 username,
                 password,
